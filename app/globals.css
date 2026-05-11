@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  background: linear-gradient(180deg, #fff7ed 0%, #fffbf5 40%, #ffffff 100%);
+  background-attachment: fixed;
+  color: #1c1917;
+  min-height: 100%;
+}
+
+body {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide number input spinners (we use custom step buttons via UI). */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
+}

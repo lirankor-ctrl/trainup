@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir *)",
+      "PowerShell(npm install *)",
+      "PowerShell(npx next build 2>&1 | Select-Object -Last 50)"
+    ]
+  }
+}
