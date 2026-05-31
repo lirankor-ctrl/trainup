@@ -28,26 +28,26 @@ export function QuickAdd({ onAdd }: Props) {
 
   return (
     <section className="space-y-4">
-      <h2 className="text-lg font-bold text-stone-800">הוספת אימון מהירה</h2>
+      <p className="text-right text-sm text-stone-500">בחר/י מרחק מהיר, או הקלד/י מרחק מדויק 👇</p>
 
-      <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+      <div className="grid grid-cols-2 gap-3">
         {PRESETS.map((km) => (
           <button
             key={km}
             onClick={() => submit(km)}
-            className={`group rounded-2xl bg-gradient-to-br from-brand-400 to-brand-500 p-5 text-white shadow-soft transition active:scale-95 ${
+            className={`group flex flex-col items-center justify-center rounded-3xl bg-gradient-to-br from-brand-400 to-brand-500 py-7 text-white shadow-glow transition active:scale-95 ${
               pulse === km ? "ring-4 ring-brand-200" : ""
             }`}
           >
-            <div className="text-3xl font-bold">{km}</div>
-            <div className="text-sm opacity-90">ק״מ</div>
+            <div className="text-4xl font-extrabold leading-none">{km}</div>
+            <div className="mt-1 text-sm font-medium opacity-90">ק״מ</div>
           </button>
         ))}
       </div>
 
       <form
         onSubmit={handleCustom}
-        className="flex gap-2 rounded-2xl bg-white p-3 shadow-soft ring-1 ring-stone-100"
+        className="flex gap-2 rounded-3xl bg-white p-3 shadow-soft ring-1 ring-stone-100"
       >
         <input
           type="number"
@@ -57,12 +57,12 @@ export function QuickAdd({ onAdd }: Props) {
           placeholder="מרחק מותאם אישית (ק״מ)"
           value={custom}
           onChange={(e) => setCustom(e.target.value)}
-          className="flex-1 rounded-xl bg-stone-50 px-4 py-3 text-right text-lg outline-none ring-1 ring-transparent focus:ring-brand-300"
+          className="flex-1 rounded-2xl bg-stone-50 px-4 py-3 text-right text-lg outline-none ring-1 ring-transparent focus:ring-brand-300"
         />
         <button
           type="submit"
           disabled={!custom}
-          className="rounded-xl bg-stone-800 px-5 text-white transition disabled:opacity-40"
+          className="rounded-2xl bg-brand-500 px-6 font-bold text-white transition active:scale-95 disabled:opacity-40"
         >
           הוסף
         </button>

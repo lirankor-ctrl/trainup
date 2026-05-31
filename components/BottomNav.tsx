@@ -23,7 +23,7 @@ export function BottomNav() {
                 href={tab.href}
                 className={`flex flex-col items-center gap-1 rounded-2xl px-2 py-2 text-xs transition ${
                   active
-                    ? "bg-brand-50 font-bold text-brand-600"
+                    ? "bg-ocean-50 font-bold text-ocean-600"
                     : "text-stone-500 hover:text-stone-800"
                 }`}
               >

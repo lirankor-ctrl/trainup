@@ -10,12 +10,12 @@ const heebo = Heebo({
 });
 
 export const metadata: Metadata = {
-  title: "מרחקים קטנים",
-  description: "אפליקציית מעקב הליכה וריצה — צעד ועוד צעד",
+  title: "TrainUp — רצים מסביב לעולם",
+  description: "אפליקציית מעקב הליכה וריצה. כל ק״מ הופך למסע בין ציוני דרך מפורסמים בעולם.",
 };
 
 export const viewport: Viewport = {
-  themeColor: "#f97316",
+  themeColor: "#2b8fe6",
   width: "device-width",
   initialScale: 1,
   maximumScale: 1,

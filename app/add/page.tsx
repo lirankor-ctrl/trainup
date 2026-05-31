@@ -24,14 +24,14 @@ export default function AddPage() {
     addWorkout({ sport, distanceKm: km });
     refresh();
     setLastAdded(km);
-    setTimeout(() => router.push("/"), 800);
+    setTimeout(() => router.push("/"), 900);
   };
 
   return (
     <div className="space-y-6">
       <header className="text-right">
-        <div className="text-xs text-stone-400">הוספת אימון</div>
-        <h1 className="text-2xl font-bold text-stone-800">כמה {SPORT_LABEL[sport]} היום?</h1>
+        <div className="text-xs text-stone-400">אימון חדש</div>
+        <h1 className="text-2xl font-bold text-stone-800">כמה {SPORT_LABEL[sport]} עשית היום?</h1>
       </header>
 
       <div className="flex gap-2">
@@ -39,9 +39,9 @@ export default function AddPage() {
           <button
             key={s}
             onClick={() => update({ sport: s })}
-            className={`flex-1 rounded-2xl px-4 py-3 text-sm font-bold transition ${
+            className={`flex-1 rounded-2xl px-4 py-3 text-sm font-bold transition active:scale-[0.98] ${
               sport === s
-                ? "bg-brand-500 text-white shadow-soft"
+                ? "bg-ocean-500 text-white shadow-soft"
                 : "bg-white text-stone-600 ring-1 ring-stone-100"
             }`}
           >
@@ -53,8 +53,8 @@ export default function AddPage() {
       <QuickAdd onAdd={handleAdd} />
 
       {lastAdded !== null && (
-        <div className="rounded-2xl bg-sage-500 p-4 text-center font-bold text-white shadow-soft">
-          ✅ נוספו {formatKm(lastAdded)} ק״מ! מעביר אותך לראשי…
+        <div className="animate-rise rounded-3xl bg-gradient-to-br from-sage-500 to-sage-600 p-5 text-center font-bold text-white shadow-glow">
+          ✅ נוספו {formatKm(lastAdded)} ק״מ! כל הכבוד — חוזרים למסך הראשי…
         </div>
       )}
     </div>
