@@ -4,6 +4,7 @@ import { useMemo } from "react";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { MotivationCard } from "@/components/MotivationCard";
+import { DidYouKnow } from "@/components/DidYouKnow";
 import { SportPicker } from "@/components/SportPicker";
 import { StatsGrid } from "@/components/Stats";
 import { useSettings, useWorkouts } from "@/lib/hooks";
@@ -54,8 +55,9 @@ export default function HomePage() {
       <Header sport={sport} onSwitch={() => update({ sport: nextSport(sport) })} />
 
       {insight && (
-        <div className="animate-rise">
+        <div className="animate-rise space-y-3">
           <MotivationCard insight={insight} />
+          {insight.fact && <DidYouKnow fact={insight.fact} />}
         </div>
       )}
 
